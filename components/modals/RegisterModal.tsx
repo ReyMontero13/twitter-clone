@@ -79,6 +79,7 @@ const RegisterModal = () => {
             onClose={registerModal.onClose}
             onSubmit={onSubmit}
             body={bodyContent}
+            footer={footerContent}
         />
     )
 }
