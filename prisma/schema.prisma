@@ -12,7 +12,7 @@ datasource db {
 
 
 model User {
-  id              Int @id @default(autoincrement()) @map("_id") 
+  id              String  @default(cuid()) @id
   name            String?
   username        String?   @unique
   bio             String?
@@ -33,11 +33,11 @@ model User {
 }
 
 model Post {
-  id                 Int @id @default(autoincrement()) @map("_id") 
+  id                 String @id @default(cuid()) 
   body               String
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
-  userId             Int
+  userId             String
   likedIds           String[] 
   image              String?
 
@@ -47,21 +47,20 @@ model Post {
 }
 
 model Comment {
-  id                 Int @id @default(autoincrement()) @map("_id")
+  id                 String  @default(cuid()) @id
   body               String
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
-  userId             Int
-  postId             Int
+  userId             String
+  postId             String
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
 }
 
 model Notification {
-  id                 Int @id @default(autoincrement()) @map("_id")
-  body               String
-  userId             Int
+  id                 String @id @default(cuid()) 
+  userId             String
   createdAt          DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
