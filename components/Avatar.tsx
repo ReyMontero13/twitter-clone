@@ -40,7 +40,7 @@ const Avatar: React.FC<AvatarProps> = ({
                 relative
             `}
         >
-            <Image fill style={{objectFit: 'cover'}} alt="Avatar" onClick={onClick} src={fetchedUser?.profileImage || '/images/placeholder.png'}/>
+            <Image fill style={{objectFit: 'cover', borderRadius:'100%'}} alt="Avatar" onClick={onClick} src={fetchedUser?.profileImage || '/images/placeholder.jpg'}/>
 
         </div>
     );
