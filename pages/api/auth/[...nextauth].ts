@@ -33,6 +33,9 @@ export default NextAuth({
                     credentials.password,
                     user.hashedPassword
                 );
+///////////////////////////////////////
+                    console.log(isCorrectPassword)
+
 
                 if (!isCorrectPassword) {
                     throw new Error('Invalid credentials');
