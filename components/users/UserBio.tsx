@@ -40,7 +40,6 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
             onClick={()=>{}} 
             label="Follow"
             secondary
-            outline
           />
         )}
       </div>
